@@ -4,7 +4,7 @@ const { request } = require('express')
 var bodyParser = require('body-parser')
 var app = express()
 var server = http.Server(app)
-var Article = require('./article.model.js')
+var Article = require('./article.model')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -88,8 +88,9 @@ app.get('/articles/all', function(request, response){
 })
 
 server.listen(process.env.PORT || 3000,
-process.env.IP || 'localhost', function(){
-console.log('Server running');
+  process.env.IP || 'localhost', function(){
+  console.log('Server running');
 })
+
 module.exports = {app, server, mongoose}
 
