@@ -1,0 +1,7 @@
+<%- include('partials/header.ejs') %>
+    <ul>
+        <% for(var i=0; i<article.length; i++) { %>
+        <li> <%= article[i].title %> </li>
+        <% } %>
+    </ul>        
+<%- include('partials/footer.ejs') %>
